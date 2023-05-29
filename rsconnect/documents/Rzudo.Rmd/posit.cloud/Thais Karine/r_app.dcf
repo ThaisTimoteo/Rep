@@ -1,0 +1,13 @@
+name: r_app
+title: R_app
+username:
+account: Thais Karine
+server: posit.cloud
+hostUrl: https://api.shinyapps.io/v1
+appId: 9054675
+bundleId: 7188626
+url: https://posit.cloud/content/5935540
+when: 1683549043.47524
+lastSyncTime: 1683549043.47525
+asMultiple: FALSE
+asStatic: FALSE

@@ -1,0 +1,59 @@
+---
+title: "Rzudo"
+output: 
+  flexdashboard::flex_dashboard:
+    orientation: columns
+    vertical_layout: fill
+runtime: shiny    
+---
+
+```{r setup, include=FALSE}
+library(flexdashboard)
+library(dplyr)
+library(ggplot2)
+```
+
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Tabela
+
+```{r}
+renderTable({ iris %>% head()})
+ 
+```
+
+Column {data-width=500}
+-----------------------------------------------------------------------
+
+### Gráfico de Dispersão
+
+```{r}
+
+renderPlot({
+  iris_tbl <- as_tibble(iris)
+
+ggplot(iris_tbl) +
+  aes(x = Sepal.Length, y = Sepal.Width)+
+  geom_point()
+})
+
+
+```
+
+### Gráfico2
+
+```{r}
+
+renderPlot({
+  iris_tbl <- as_tibble(iris)
+
+ggplot(iris_tbl) +
+  aes(y = Sepal.Length, col = Species)+
+  geom_boxplot()
+})
+
+
+```
+
